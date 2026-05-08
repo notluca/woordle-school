@@ -79,10 +79,7 @@ function submitGuess() {
   }
 
   if (guess === currentWord) {
-    setTimeout(
-      () => alert("Correct! You got it in " + (currentRow + 1) + " tries!"),
-      100,
-    );
+    alert("Correct! You got it in " + (currentRow + 1) + " tries!");
     document.removeEventListener("keydown", handleKey);
     return;
   }
@@ -91,10 +88,8 @@ function submitGuess() {
   currentCol = 0;
 
   if (currentRow >= 6) {
-    setTimeout(
-      () => alert("Game over! The word was: " + currentWord.toUpperCase()),
-      100,
-    );
+    alert("Game over! The word was: " + currentWord.toUpperCase());
+    document.removeEventListener("keydown", handleKey);
   }
 }
 
