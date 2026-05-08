@@ -1,0 +1,20 @@
+body{
+    background-color: #2E2E2E;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1{
+    color: white;
+}
+
+#gameCanvas{
+    width: 666px;
+    height: 749px;
+    background-color: #474D5B;
+    border-radius: 20px;
+}
