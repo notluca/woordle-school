@@ -14,14 +14,27 @@
     <div id="popupCorrect" class="popup">
       Gefeliciteerd, je hebt het woord geraden in ... beurten!
       <br />
-      <div class="close"><a href="../../Bram/home.html">Terug naar startscherm</a></div>
+      <div class="close">
+        <a href="../../Bram/home.html">Terug naar startscherm</a>
+      </div>
     </div>
 
     <div id="popupWrong" class="popup">
       Helaas, je hebt het woord niet in 6 beurten kunnen raden.
       <br />
-      <div class="close"><a href="../../Bram/home.html">Terug naar startscherm</a></div>
+      <div class="close">
+        <a href="../../Bram/home.html">Terug naar startscherm</a>
+      </div>
     </div>
     <script src="../js/game.js"></script>
   </body>
 </html>
+
+<script>
+  document.querySelectorAll('link[rel="stylesheet"]').forEach((link) => {
+    link.href = link.href.split("?")[0] + "?t=" + Date.now();
+  });
+  document.querySelectorAll("script[src]").forEach((script) => {
+    script.src = script.src.split("?")[0] + "?t=" + Date.now();
+  });
+</script>
