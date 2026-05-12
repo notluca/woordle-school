@@ -1,14 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../css/index.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/index.css" />
+    !
+  </head>
+  <body>
     <h1>WOORDLE</h1>
     <div id="gameCanvas"></div>
+    <div id="popupOverlay"></div>
+    <div id="popupCorrect" class="popup">
+      Gefeliciteerd, je hebt het woord geraden in ... beurten!
+      <br />
+      <div class="close"><a href="../../Bram/home.html">Terug naar startscherm</a></div>
+    </div>
+
+    <div id="popupWrong" class="popup">
+      Helaas, je hebt het woord niet in 6 beurten kunnen raden.
+      <br />
+      <div class="close"><a href="../../Bram/home.html">Terug naar startscherm</a></div>
+    </div>
     <script src="../js/game.js"></script>
-</body>
+  </body>
 </html>

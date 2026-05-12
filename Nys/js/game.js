@@ -63,23 +63,43 @@ function submitGuess() {
   const row = document.querySelectorAll(".row")[currentRow];
   const cells = row.querySelectorAll(".cell");
   let guess = "";
-
   for (let i = 0; i < 5; i++) {
     guess += cells[i].textContent.toLowerCase();
   }
 
+  // First pass: mark greens and count available letters
+  const letterCount = {};
+  const result = Array(5).fill(null);
+
   for (let i = 0; i < 5; i++) {
     if (guess[i] === currentWord[i]) {
-      cells[i].style.backgroundColor = "green";
-    } else if (currentWord.includes(guess[i])) {
-      cells[i].style.backgroundColor = "yellow";
+      result[i] = "green";
+      letterCount[currentWord[i]] = (letterCount[currentWord[i]] || 0) - 1;
     } else {
-      cells[i].style.backgroundColor = "gray";
+      letterCount[currentWord[i]] = (letterCount[currentWord[i]] || 0) + 1;
     }
   }
 
+  // Second pass: mark yellows only if letters are still available
+  for (let i = 0; i < 5; i++) {
+    if (result[i] === "green") continue;
+    if (letterCount[guess[i]] > 0) {
+      result[i] = "yellow";
+      letterCount[guess[i]]--;
+    } else {
+      result[i] = "grey";
+    }
+  }
+
+  // Apply colors
+  for (let i = 0; i < 5; i++) {
+    if (result[i] === "green")       cells[i].style.backgroundColor = "#79B851";
+    else if (result[i] === "yellow") cells[i].style.backgroundColor = "#F3C237";
+    else                             cells[i].style.backgroundColor = "#A4AEC4";
+  }
+
   if (guess === currentWord) {
-    alert("Correct! You got it in " + (currentRow + 1) + " tries!");
+    showPopup(popupCorrect);
     document.removeEventListener("keydown", handleKey);
     return;
   }
@@ -88,7 +108,7 @@ function submitGuess() {
   currentCol = 0;
 
   if (currentRow >= 6) {
-    alert("Game over! The word was: " + currentWord.toUpperCase());
+    showPopup(popupWrong);
     document.removeEventListener("keydown", handleKey);
   }
 }
@@ -97,8 +117,35 @@ function startGame() {
   createGameBoard();
   loadWords().then((word) => {
     currentWord = word.toLowerCase();
-    document.addEventListener("keydown", handleKey); // ✅ listen for physical keyboard
+    document.addEventListener("keydown", handleKey);
   });
 }
+
+const popupCorrect = document.getElementById("popupCorrect");
+const popupWrong = document.getElementById("popupWrong");
+const overlay = document.getElementById("popupOverlay");
+const closeButtons = document.querySelectorAll(".close");
+
+function showPopup(popup) {
+  overlay.style.display = "block";
+  popup.style.display = "block";
+}
+
+function hidePopups() {
+  overlay.style.display = "none";
+  popupCorrect.style.display = "none";
+  popupWrong.style.display = "none";
+}
+
+closeButtons.forEach((button) => {
+  button.addEventListener("click", hidePopups);
+});
+overlay.addEventListener("click", hidePopups);
+
+document.querySelectorAll(".close").forEach(function(el) {
+  el.addEventListener("click", function() {
+    window.location.href = "../../Bram/home.html";
+  });
+});
 
 startGame();

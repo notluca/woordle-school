@@ -67,6 +67,10 @@ body {
 }
 
 .speel-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
     background: #2E2E2E;
     color: #fff;
     font-weight: 700;

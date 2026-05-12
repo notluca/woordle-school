@@ -1,43 +1,113 @@
-body{
-    background-color: #2E2E2E;
-    margin: 0px;
-    padding: 0px;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+body {
+  background-color: #2e2e2e;
+  margin: 0px;
+  padding: 0px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-h1{
-    color: white;
-    font-size: 50px;
+h1 {
+  color: white;
+  font-size: 50px;
 }
 
-#gameCanvas{
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    padding: 12px;
-    background-color: #474D5B;
+#gameCanvas {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px;
+  background-color: #474D5B;
 }
 
 .row {
-    display: flex;
-    flex-direction: row;
-    gap: 6px;
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
 }
 
 .cell {
-    width: 100px;
-    height: 100px;
-    box-sizing: border-box;
-    background-color: #6B7385;
-    border: 3px solid #3a3f4d;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 60px;
-    font-weight: bold;
-    color: white;
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  background-color: #A4AEC4;
+  border: 3px solid #3a3f4d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  font-weight: bold;
+  font-family: "Instrument Sans", Arial, sans-serif;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(90%, 400px);
+  padding: 20px;
+  border: 2px solid;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  color: #111;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  z-index: 1000;
+}
+
+#popupCorrect {
+  background-color: #d7f5d7;
+  border-color: #4caf50;
+}
+
+#popupWrong {
+  background-color: #ffd5d5;
+  border-color: #f44336;
+}
+
+#popupOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 900;
+}
+
+.popup .close {
+  margin-top: 16px;
+  padding: 8px 16px;
+  border: none;
+  background: #333;
+  color: white !important;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.popup .close a {
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  height: 100%;
+}
+
+form {
+  margin: 40px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 220px;
+}
+
+.close {
+  background: white;
+  color: #333;
 }
