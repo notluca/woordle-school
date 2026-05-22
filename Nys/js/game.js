@@ -109,6 +109,7 @@ function submitGuess() {
   }
 
   if (guess === currentWord) {
+    document.getElementById("guessCount").textContent = currentRow + 1;
     showPopup(popupCorrect);
     document.removeEventListener("keydown", handleKey);
     return;
