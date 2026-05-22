@@ -3,15 +3,20 @@ body {
   margin: 0px;
   padding: 0px;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
 h1 {
   color: white;
   font-size: 50px;
+  font-family: "Instrument Sans", sans-serif;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
 }
 
 #gameCanvas {
@@ -19,7 +24,8 @@ h1 {
   flex-direction: column;
   gap: 6px;
   padding: 12px;
-  background-color: #474D5B;
+  background-color: #474d5b;
+  border-radius: 10px;
 }
 
 .row {
@@ -32,7 +38,7 @@ h1 {
   width: 100px;
   height: 100px;
   box-sizing: border-box;
-  background-color: #A4AEC4;
+  background-color: #a4aec4;
   border: 3px solid #3a3f4d;
   display: flex;
   justify-content: center;
@@ -40,6 +46,7 @@ h1 {
   font-size: 60px;
   font-weight: bold;
   font-family: "Instrument Sans", Arial, sans-serif;
+  border-radius: 10px;
 }
 
 .popup {
@@ -61,11 +68,13 @@ h1 {
 #popupCorrect {
   background-color: #d7f5d7;
   border-color: #4caf50;
+  border-radius: 10px;
 }
 
 #popupWrong {
   background-color: #ffd5d5;
   border-color: #f44336;
+  border-radius: 10px;
 }
 
 #popupOverlay {
@@ -84,6 +93,7 @@ h1 {
   color: white !important;
   cursor: pointer;
   text-decoration: none;
+  border-radius: 10px;
 }
 
 .popup .close a {
@@ -110,4 +120,77 @@ input[type="text"] {
 .close {
   background: white;
   color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+
+header img {
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  filter: invert(1);
+}
+
+.light-mode {
+  background-color: white;
+  color: black;
+}
+
+.light-mode * {
+  color: black;
+}
+
+.light-mode header img {
+  filter: invert(0);
+}
+
+#keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 20px;
+}
+
+.keyboard-row {
+  display: flex;
+  gap: 5px;
+}
+
+.key-btn {
+  width: 50px;
+  height: 68px;
+  border: none;
+  border-radius: 4px;
+  background-color: #d3d6da;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: "Instrument Sans", sans-serif;
+  text-align: center;
+}
+
+.key-btn:hover {
+  background-color: #b0b3b8;
+}
+
+.key-wide {
+  width: 56px;
+}
+
+.key-btn:disabled {
+  background-color: #6b7280;
+  cursor: not-allowed;
+  opacity: 0.6;
+  pointer-events: none;
 }

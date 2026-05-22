@@ -5,28 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="../css/index.css" />
-    !
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>WOORDLE</h1>
-    <div id="gameCanvas"></div>
-    <div id="popupOverlay"></div>
-    <div id="popupCorrect" class="popup">
-      Gefeliciteerd, je hebt het woord geraden in ... beurten!
-      <br />
-      <div class="close">
-        <a href="../../Bram/home.html">Terug naar startscherm</a>
+    <div class="content">
+      <h1>WOORDLE</h1>
+      <div id="gameCanvas"></div>
+      <div id="popupOverlay"></div>
+      
+      <div id="popupCorrect" class="popup">
+        Gefeliciteerd, je hebt het woord geraden in ... beurten!
+        <br />
+        <div class="close">
+          <a href="../../Bram/home.html">Terug naar startscherm</a>
+        </div>
       </div>
-    </div>
 
-    <div id="popupWrong" class="popup">
-      Helaas, je hebt het woord niet in 6 beurten kunnen raden.
-      <br />
-      <div class="close">
-        <a href="../../Bram/home.html">Terug naar startscherm</a>
+      <div id="popupWrong" class="popup">
+        Helaas, je hebt het woord niet in 6 beurten kunnen raden.
+        <br />
+        <div class="close">
+          <a href="../../Bram/home.html">Terug naar startscherm</a>
+        </div>
       </div>
     </div>
     <script src="../js/game.js"></script>
+    <script src="../js/lightmode.js"></script>
   </body>
 </html>
 

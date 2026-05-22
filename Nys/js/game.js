@@ -67,7 +67,6 @@ function submitGuess() {
     guess += cells[i].textContent.toLowerCase();
   }
 
-  // First pass: mark greens and count available letters
   const letterCount = {};
   const result = Array(5).fill(null);
 
@@ -80,7 +79,6 @@ function submitGuess() {
     }
   }
 
-  // Second pass: mark yellows only if letters are still available
   for (let i = 0; i < 5; i++) {
     if (result[i] === "green") continue;
     if (letterCount[guess[i]] > 0) {
@@ -91,11 +89,23 @@ function submitGuess() {
     }
   }
 
-  // Apply colors
   for (let i = 0; i < 5; i++) {
-    if (result[i] === "green")       cells[i].style.backgroundColor = "#79B851";
+    if (result[i] === "green") cells[i].style.backgroundColor = "#79B851";
     else if (result[i] === "yellow") cells[i].style.backgroundColor = "#F3C237";
-    else                             cells[i].style.backgroundColor = "#A4AEC4";
+    else cells[i].style.backgroundColor = "#A4AEC4";
+
+    const keyBtn = document.querySelector(`.key-btn[data-key="${guess[i]}"]`);
+    const current = keyBtn ? keyBtn.dataset.state : null;
+    if (result[i] === "grey" && !current) {
+      keyBtn.dataset.state = "grey";
+      keyBtn.style.backgroundColor = "#6B7280";
+    } else if (result[i] === "yellow" && current !== "green") {
+      keyBtn.dataset.state = "yellow";
+      keyBtn.style.backgroundColor = "#F3C237";
+    } else if (result[i] === "green") {
+      keyBtn.dataset.state = "green";
+      keyBtn.style.backgroundColor = "#79B851";
+    }
   }
 
   if (guess === currentWord) {
@@ -113,8 +123,44 @@ function submitGuess() {
   }
 }
 
+function createKeyboard() {
+  const keyboard = document.createElement("div");
+  keyboard.id = "keyboard";
+
+  const rows = [
+    ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"],
+    ["a", "s", "d", "f", "g", "h", "j", "k", "l"],
+    ["Enter", "z", "x", "c", "v", "b", "n", "m", "Backspace"],
+  ];
+
+  rows.forEach((rowKeys) => {
+    const rowDiv = document.createElement("div");
+    rowDiv.classList.add("keyboard-row");
+
+    rowKeys.forEach((key) => {
+      const button = document.createElement("button");
+      button.textContent = key === "Backspace" ? "⌫" : key.toUpperCase();
+      button.dataset.key = key;
+      button.classList.add("key-btn");
+      if (key === "Enter" || key === "Backspace")
+        button.classList.add("key-wide");
+
+      button.addEventListener("click", function () {
+        handleKey({ key });
+      });
+
+      rowDiv.appendChild(button);
+    });
+
+    keyboard.appendChild(rowDiv);
+  });
+
+  document.querySelector(".content").appendChild(keyboard);
+}
+
 function startGame() {
   createGameBoard();
+  createKeyboard();
   loadWords().then((word) => {
     currentWord = word.toLowerCase();
     document.addEventListener("keydown", handleKey);
@@ -142,8 +188,8 @@ closeButtons.forEach((button) => {
 });
 overlay.addEventListener("click", hidePopups);
 
-document.querySelectorAll(".close").forEach(function(el) {
-  el.addEventListener("click", function() {
+document.querySelectorAll(".close").forEach(function (el) {
+  el.addEventListener("click", function () {
     window.location.href = "../../Bram/home.html";
   });
 });
