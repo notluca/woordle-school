@@ -15,7 +15,7 @@ h1 {
   font-size: 50px;
 }
 
-.leaderboard {
+.container {
   background-color: #474D5B;
   color: white;
   padding: 20px;
@@ -64,4 +64,72 @@ button.active{
 .list-row:nth-child(even) {
   background-color: #3F3F3F; /* Een iets lichtere grijze kleur ter variatie */
 }
+
+.containerL {
+  background-color: #474D5B;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  width: 40vw;
+}
+
+/* Styling voor de h1 zodat het lettertype mooi dik is, zoals in je plaatje */
+.uitL {
+  font-family: sans-serif; /* Gebruik je eigen lettertype als je die al hebt */
+  font-weight: bold;
+  text-align: center;
+}
+
+/* De specifieke kleuren voor de woorddelen */
+.tekst-groen {
+  color: #8CC63F; /* Een frisse, zachtgroene kleur */
+}
+
+.tekst-geel {
+  color: #F8C333; /* Een warme gele/gouden kleur */
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  color:#000000;
+  box-sizing: border-box;
+  background-color: #A4AEC4;
+  border: 3px solid #3a3f4d;
+  border-radius: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  font-weight: bold;
+  font-family: "Instrument Sans", Arial, sans-serif;
+}
+
+.cell:first-child, .cell:nth-child(2) {
+  background-color: #F3C237;
+}
+
+.cell2 {
+  width: 100px;
+  height: 100px;
+  color:#000000;
+  box-sizing: border-box;
+  background-color: #79B851;
+  border: 3px solid #3a3f4d;
+  border-radius: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  font-weight: bold;
+  font-family: "Instrument Sans", Arial, sans-serif;
+}
+
 

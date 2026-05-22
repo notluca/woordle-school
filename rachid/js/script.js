@@ -15,3 +15,16 @@ knoppen.forEach(button => {
   });
   
 });
+function createGameBoard() {
+  const gameCanvas = document.getElementById("gameCanvas");
+  for (let i = 0; i < 6; i++) {
+    const row = document.createElement("div");
+    for (let j = 0; j < 5; j++) {
+      const cell = document.createElement("div");
+      cell.classList.add("cell");
+      row.appendChild(cell);
+    }
+    row.classList.add("row");
+    gameCanvas.appendChild(row);
+  }
+}
