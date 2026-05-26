@@ -1,30 +1,214 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 body {
-    background-color: #2E2E2E;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Instrument Sans', Arial, sans-serif;
-    font-weight: bold;
+  background-color: #2e2e2e;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Instrument Sans", Arial, sans-serif;
+  font-weight: bold;
 }
 
 .woordle-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 48px;
-    font-weight: 700;
-    margin-top: 30px;
-    letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: 700;
+  margin-top: 30px;
+  letter-spacing: 2px;
 }
 
-.woordle-green { color: #79B851; }
-.woordle-yellow { color: #F3C237; }
-.woordle-white { color: #f8f8f8; }
+.woordle-green {
+  color: #79b851;
+}
+.woordle-yellow {
+  color: #f3c237;
+}
+.woordle-white {
+  color: #f8f8f8;
+}
+
+
+
+.blocks-wrapper {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-top: 32px;
+}
+
+.block {
+  width: 370px;
+  height: 370px;
+  background-color: #474d5b;
+  border-radius: 10px;
+}
+
+.invisible-block {
+  width: 370px;
+  height: 370px;
+  background-color: #474d5b;
+  border-radius: 10px;
+}
+
+.block-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  padding: 24px 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.tekst1 {
+  color: #a4aec4;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 32px;
+  margin-top: 0;
+  text-align: center;
+}
+
+.play-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background: #2e2e2e;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 0;
+  width: 80%;
+  margin: 0 auto 8px auto;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.play-btn2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  background: #3f3c3c;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 0;
+  width: 80%;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.circles {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 24px;
+}
+
+.circle {
+  width: 36px;
+  height: 36px;
+  background: #a4aec4;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+/* Woordle demo styles */
+.woordle-demo {
+  background: #2e2e2e;
+  border-radius: 16px;
+  width: 320px;
+  margin: 40px auto;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  padding: 24px 0 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.woordle-title {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+.woordle-board {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 18px;
+}
+.woordle-row {
+  display: flex;
+  gap: 6px;
+}
+.woordle-cell {
+  width: 44px;
+  height: 44px;
+  background: #7a8190;
+  color: #222;
+  font-size: 28px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.woordle-cell.green {
+  background: #79b851;
+  color: #222;
+}
+.woordle-cell.yellow {
+  background: #f3c237;
+  color: #222;
+}
+.woordle-keyboard {
+  margin-top: 10px;
+  width: 100%;
+}
+.woordle-key-row {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.woordle-key {
+  width: 28px;
+  height: 36px;
+  background: #7a8190;
+  color: #222;
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+.woordle-key.yellow {
+  background: #f3c237;
+  color: #222;
+}
 
