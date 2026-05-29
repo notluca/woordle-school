@@ -1,0 +1,145 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #2e2e2e;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: "Instrument Sans", Arial, sans-serif;
+  font-weight: bold;
+}
+.woordle-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  font-weight: 700;
+  margin-top: 40px;
+  letter-spacing: 1px;
+  gap: 0;
+}
+.woordle-green {
+  color: #79b851;
+}
+.woordle-yellow {
+  color: #f3c237;
+}
+.woordle-white {
+  color: #f8f8f8;
+}
+.blocks-wrapper {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 32px;
+}
+.block {
+  width: 420px;
+  min-height: 420px;
+  background-color: #474d5b;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.block-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  padding: 32px 0 0 0;
+  box-sizing: border-box;
+}
+.block-content-right {
+  justify-content: center;
+}
+.select-dropdown {
+  width: 85%;
+  background: #222;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+}
+.select-dropdown:focus {
+  border: 2px solid #79b851;
+}
+.main-btn {
+  width: 85%;
+  background: #222;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  margin-bottom: 14px;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+.main-btn:hover {
+  background: #333;
+}
+.word-input {
+  width: 85%;
+  background: #222;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Instrument Sans", Arial, sans-serif;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 12px 0;
+  margin-bottom: 14px;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+.word-input::placeholder {
+  color: #888;
+  text-transform: none;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+.word-input:focus {
+  border-color: #79b851;
+}
+.create-btn {
+  background: #111;
+  margin-top: 32px;
+}
+.code-box {
+  width: 85%;
+  background: #111;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 36px 0;
+  text-align: center;
+  margin-bottom: 24px;
+  margin-top: 32px;
+  letter-spacing: 1px;
+}
